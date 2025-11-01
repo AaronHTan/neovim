@@ -17,7 +17,7 @@ return {
     "hat0uma/csvview.nvim",
     ---@module "csvview"
     ---@type CsvView.Options
-    ft = "csv",
+    ft = { "csv" },
     opts = {
       parser = { comments = { "#", "//" } },
       keymaps = {
@@ -35,5 +35,37 @@ return {
       },
     },
     cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+
+    config = function()
+      vim.api.nvim_create_augroup("CsvViewGroup", { clear = true })
+      vim.api.nvim_create_autocmd({ "BufRead" }, {
+        group = "CsvViewGroup",
+        pattern = "*.csv",
+        callback = function()
+          vim.cmd("CsvViewEnable")
+        end,
+      })
+    end,
+  },
+
+  {
+    "cbochs/grapple.nvim",
+    opts = {
+      scope = "git", -- also try out "git_branch"
+    },
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = "Grapple",
+    keys = {
+      { "<leader>m", "<cmd>Grapple toggle<cr>", desc = "Grapple toggle tag" },
+      { "<leader>M", "<cmd>Grapple toggle_tags<cr>", desc = "Grapple open tags window" },
+      { "<leader>n", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
+      { "<leader>p", "<cmd>Grapple cycle_tags prev<cr>", desc = "Grapple cycle previous tag" },
+    },
+    config = function()
+      -- Use a builtin scope
+      require("grapple").setup({
+        scope = "git_branch",
+      })
+    end,
   },
 }
