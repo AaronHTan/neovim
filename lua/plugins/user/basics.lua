@@ -9,7 +9,7 @@ return {
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
-    ft = "markdown",
+    ft = { "markdown" },
     opts = {},
   },
 
@@ -17,7 +17,7 @@ return {
     "hat0uma/csvview.nvim",
     ---@module "csvview"
     ---@type CsvView.Options
-    ft = "csv",
+    ft = { "csv" },
     opts = {
       parser = { comments = { "#", "//" } },
       keymaps = {

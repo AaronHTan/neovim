@@ -24,7 +24,7 @@ return {
       {
         "mason-org/mason.nvim",
         opts = {
-          cmd = "Mason",
+          cmd = ":Mason",
           build = ":MasonUpdate",
           keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
           opts = {
@@ -200,6 +200,7 @@ return {
         gopls = {}, -- Disabled due to Go version incompatibility
         ruff = {},
         pyright = {},
+        zls = {},
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
