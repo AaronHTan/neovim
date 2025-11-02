@@ -39,6 +39,8 @@ return {
       nerd_font_variant = "mono",
     },
 
+    cmdline = { enabled = false },
+
     completion = {
       -- Automatically show documentation for the selected item
       documentation = {
