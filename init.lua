@@ -98,12 +98,12 @@ require("lazy").setup({
 
   require("plugins.colorschemes.common"),
 
-  require("plugins.utils.debug"),
-  require("plugins.utils.indent_line"),
-  require("plugins.utils.lint"),
-  require("plugins.utils.autopairs"),
-  require("plugins.utils.neo-tree"),
-  require("plugins.utils.snacks"),
+  require("plugins.core.debug"),
+  require("plugins.core.indent_line"),
+  require("plugins.core.lint"),
+  require("plugins.core.autopairs"),
+  require("plugins.core.neo-tree"),
+  require("plugins.core.snacks"),
 
   { import = "plugins.user" },
 })

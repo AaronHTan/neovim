@@ -169,5 +169,10 @@ return {
         style = "lazygit",
       },
     },
+    terminal = {
+      enabled = true,
+      configure = true,
+      config = {},
+    },
   },
 }
