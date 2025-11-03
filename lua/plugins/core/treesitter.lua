@@ -23,7 +23,7 @@ return { -- Highlight, edit, and navigate code
       "java",
       "javascript",
       "json",
-      "latex",
+      -- "latex",
       "lua",
       "luadoc",
       "markdown",
