@@ -175,4 +175,14 @@ return {
       config = {},
     },
   },
+
+  keys = {
+    {
+      "<leader>lg",
+      function()
+        Snacks.lazygit.open()
+      end,
+      desc = "Open [l]azy[g]it in neovim",
+    },
+  },
 }
