@@ -94,6 +94,9 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         "delve",
+        "bash",
+        "codelldb",
+        "python",
       },
     })
 
@@ -194,6 +197,8 @@ return {
     dap.listeners.after.event_initialized["dapui_config"] = dapui.open
     dap.listeners.before.event_terminated["dapui_config"] = dapui.close
     dap.listeners.before.event_exited["dapui_config"] = dapui.close
+
+    dap.configurations.rust = require("plugins.core.debug.rust")
 
     -- Install golang specific config
     require("dap-go").setup({
